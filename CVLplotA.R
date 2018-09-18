@@ -46,7 +46,7 @@ fasta2df <- function(filename, cov_cutoff, len_cutoff){
  filename_fields <- strsplit(filename, "_")
  plot_title <- paste(filename_fields[[1]][1],".jpeg",sep="")
  
- jpeg(file=plot_title, width=400, height=200, units="mm", quality=80, res=600);
+ png(file=plot_title, width=400, height=200, units="mm", quality=80, res=600);
  plot(seq.df$kblen,seq.df$logcov,pch=".",xlab="Length (kb)",
       ylab=expression('log'[10]*' coverage (X)'),
       yaxt="n",
