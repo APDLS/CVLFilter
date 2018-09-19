@@ -70,7 +70,7 @@ fasta2df <- function(filename, cov_cutoff, len_cutoff){
  return(seq.df)
 }
 
-# Execute function;  replace values as needed
-outseq.df <- fasta2df(filename="scaffolds.fasta", len_cutoff = 0.5, cov_cutoff = 20)
+args = commandArgs(trailingOnly=TRUE)
 
-
+# Execute function
+outseq.df <- fasta2df(filename=args[1], len_cutoff = as.numeric(args[2]), cov_cutoff = as.numeric(args[3]))
