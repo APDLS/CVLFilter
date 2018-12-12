@@ -62,7 +62,7 @@ fasta2df <- function(filename, cov_cutoff, len_cutoff){
  abline(h=log10(cov_cutoff),col="green")
  dev.off()
  
- tmp.df <- subset(seq.df, seq.df$len>len_cutoff & seq.df$cov>cov_cutoff, select=ID)
+ tmp.df <- subset(seq.df, seq.df$kblen>len_cutoff & seq.df$cov>cov_cutoff, select=ID)
  out_filename = paste(filename_fields[[1]][1],"_passIDs.txt",sep="")
  write.table(tmp.df,file=out_filename,col.names=F,row.names=F,quote=F,sep="\t")
 
